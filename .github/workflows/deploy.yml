@@ -16,9 +16,8 @@ jobs:
         run: |
           printf 'TELEGRAM_BOT_TOKEN=%s\n' "$TELEGRAM_BOT_TOKEN" > .env.raw
           printf 'TELEGRAM_CHAT_ID=%s\n' "$TELEGRAM_CHAT_ID" >> .env.raw
-          echo "b64<<EOF" >> $GITHUB_OUTPUT
-          base64 -w 0 .env.raw >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          B64=$(base64 -w 0 .env.raw)
+          echo "b64=$B64" >> $GITHUB_OUTPUT
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
