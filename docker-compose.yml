@@ -1,5 +1,5 @@
 services:
-  nginx:
+  km-nginx:
     restart: unless-stopped
     image: nginx:latest
     container_name: konstantin-melnikov-nginx
@@ -22,11 +22,11 @@ services:
     networks:
       - web
     depends_on:
-      - php-fpm
+      - km-php-fpm
     profiles:
       - prod
 
-  nginx-dev:
+  km-nginx-dev:
     image: nginx:latest
     container_name: konstantin-melnikov-nginx-dev
     hostname: konstantin-melnikov.loc
@@ -36,13 +36,13 @@ services:
     ports:
       - "8080:80"
     depends_on:
-      - php-fpm
+      - km-php-fpm
     networks:
       - app
     profiles:
       - dev
 
-  php-fpm:
+  km-php-fpm:
     image: php:8.3-fpm
     container_name: konstantin-melnikov-php
     restart: unless-stopped
