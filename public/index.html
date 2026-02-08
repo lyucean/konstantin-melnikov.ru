@@ -42,6 +42,7 @@
   </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -99,6 +100,8 @@
     .calc-result { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
     .calc-item { background: #fff; border: 1px solid rgba(33, 42, 74, 0.2) !important; box-shadow: 0 1px 3px rgba(33, 42, 74, 0.06); }
     .calc-item:hover { border-color: var(--accent) !important; box-shadow: 0 2px 8px rgba(33, 42, 74, 0.1); }
+    .calc-item-hint { cursor: help; flex-shrink: 0; opacity: 0.7; }
+    .calc-item-hint:hover { opacity: 1; }
     details { border: 1px solid var(--border) !important; border-radius: var(--radius) !important; }
     details summary { cursor: pointer; list-style: none; padding-right: 2rem; position: relative; }
     details summary::-webkit-details-marker { display: none; }
@@ -235,112 +238,112 @@
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="14000">
-            <span class="flex-grow-1">Учёт клиентов</span>
+            <span class="flex-grow-1">Учёт клиентов <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Карточки контактов и сделок в одном месте, этапы продаж, поля под твой бизнес."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">14 000 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="21000">
-            <span class="flex-grow-1">Автоматизация продаж</span>
+            <span class="flex-grow-1">Автоматизация продаж <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Роботы и сценарии: что делать при новом лиде, смене этапа, напоминания менеджерам."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">21 000 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
-            <span class="flex-grow-1">Заявки с сайта в CRM</span>
+            <span class="flex-grow-1">Заявки с сайта в CRM <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Форма на сайте или заявка с рекламы сразу создаёт сделку в Битрикс24."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">8 400 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
-            <span class="flex-grow-1">Телефония</span>
+            <span class="flex-grow-1">Телефония <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Подключение звонков в Битрикс24: исходящие, запись разговоров, показ номера клиента."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">10 500 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
-            <span class="flex-grow-1">WhatsApp в CRM</span>
+            <span class="flex-grow-1">WhatsApp в CRM <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Переписка с клиентами из WhatsApp внутри Битрикс24, в карточке сделки."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">8 400 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
-            <span class="flex-grow-1">Email-рассылки</span>
+            <span class="flex-grow-1">Email-рассылки <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Настройка рассылок по базе: письма, цепочки, отчёты по открытиям."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">7 000 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="14000">
-            <span class="flex-grow-1">Статистика продаж</span>
+            <span class="flex-grow-1">Статистика продаж <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Отчёты и воронки: сколько сделок, конверсия, откуда клиенты."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">14 000 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="17500">
-            <span class="flex-grow-1">Синхронизация с 1С</span>
+            <span class="flex-grow-1">Синхронизация с 1С <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Обмен товарами, остатками, заказами между 1С и Битрикс24."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">17 500 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
-            <span class="flex-grow-1">Повторные продажи</span>
+            <span class="flex-grow-1">Повторные продажи <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Настройка работы с текущими клиентами: напоминания, допродажи, кросс-продажи."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">10 500 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
-            <span class="flex-grow-1">Задачи сотрудников</span>
+            <span class="flex-grow-1">Задачи сотрудников <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Задачи, сроки, контроль: кто что делает, напоминания, отчёты."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">8 400 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
-            <span class="flex-grow-1">Документы в облаке</span>
+            <span class="flex-grow-1">Документы в облаке <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Хранение файлов в Битрикс24, доступ по правам, шаблоны документов."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">7 000 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
-            <span class="flex-grow-1">Коммерческие предложения</span>
+            <span class="flex-grow-1">Коммерческие предложения <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Создание КП из карточки, отправка клиенту, учёт версий."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">10 500 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
-            <span class="flex-grow-1">База знаний</span>
+            <span class="flex-grow-1">База знаний <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Внутренняя база инструкций и документов для сотрудников в Битрикс24."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">8 400 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
-            <span class="flex-grow-1">Онлайн-платежи</span>
+            <span class="flex-grow-1">Онлайн-платежи <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Приём оплаты по ссылке или в сделке: карта, СБП, интеграция с кассой."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">10 500 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
-            <span class="flex-grow-1">Права доступа</span>
+            <span class="flex-grow-1">Права доступа <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Кто что видит и может делать: доступ к сделкам, полям, отчётам по ролям."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">7 000 ₽</span>
           </label>
         </div>
         <div class="col-md-6 col-xl-4">
           <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
             <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
-            <span class="flex-grow-1">Обучение команды</span>
+            <span class="flex-grow-1">Обучение команды <span class="calc-item-hint text-accent" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Покажу команде, как пользоваться Битрикс24: сделками, задачами, отчётами."><i class="bi bi-question-circle"></i></span></span>
             <span class="text-accent fw-600">7 000 ₽</span>
           </label>
         </div>
@@ -539,5 +542,11 @@
     })();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function(el) { new bootstrap.Tooltip(el); });
+    document.querySelectorAll('.calc-item-hint').forEach(function(el) {
+      el.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation(); });
+    });
+  </script>
 </body>
 </html>
