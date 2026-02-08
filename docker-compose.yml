@@ -1,0 +1,64 @@
+services:
+  nginx:
+    restart: unless-stopped
+    image: nginx:latest
+    container_name: konstantin-melnikov-nginx
+    hostname: konstantin-melnikov.ru
+    volumes:
+      - ./public:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      - NGINX_HOST=konstantin-melnikov.ru
+      - NGINX_INDEX=index.html
+      - NGINX_ROOT=/usr/share/nginx/html
+      - NGINX_PORT=80
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.km.rule=Host(`konstantin-melnikov.ru`)
+      - traefik.http.routers.km.entrypoints=websecure
+      - traefik.http.routers.km.tls=true
+      - traefik.http.routers.km.tls.certresolver=letsencrypt
+      - traefik.http.services.km.loadbalancer.server.port=80
+    networks:
+      - web
+    depends_on:
+      - php-fpm
+    profiles:
+      - prod
+
+  nginx-dev:
+    image: nginx:latest
+    container_name: konstantin-melnikov-nginx-dev
+    hostname: konstantin-melnikov.loc
+    volumes:
+      - ./public:/usr/share/nginx/html
+      - ./nginx/dev.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    depends_on:
+      - php-fpm
+    networks:
+      - app
+    profiles:
+      - dev
+
+  php-fpm:
+    image: php:8.3-fpm
+    container_name: konstantin-melnikov-php
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./public:/usr/share/nginx/html
+      - ./.env:/var/run/app.env:ro
+    networks:
+      - web
+      - app
+    profiles:
+      - prod
+      - dev
+
+networks:
+  web:
+    external: true
+  app:
+    driver: bridge

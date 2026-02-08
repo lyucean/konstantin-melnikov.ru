@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Константин Мельников - внедрение и настройка Битрикс24 под ключ</title>
+  <meta name="description" content="Настрою Битрикс24 под твой бизнес: CRM, автоматизация, интеграции с 1С и телефонией. Честные сроки и цены. Оставь заявку.">
+  <meta name="keywords" content="Битрикс24, внедрение Битрикс24, настройка Битрикс24, CRM Битрикс24, автоматизация Битрикс24, интеграция 1С Битрикс24, Константин Мельников">
+  <meta name="author" content="Константин Мельников">
+  <link rel="canonical" href="https://konstantin-melnikov.ru/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://konstantin-melnikov.ru/">
+  <meta property="og:title" content="Константин Мельников - внедрение и настройка Битрикс24">
+  <meta property="og:description" content="Настрою Битрикс24 под твой бизнес: CRM, автоматизация, интеграции. Честные сроки и цены.">
+  <meta property="og:image" content="https://konstantin-melnikov.ru/img/author.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Константин Мельников">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Константин Мельников - внедрение и настройка Битрикс24">
+  <meta name="twitter:description" content="Настрою Битрикс24 под твой бизнес: CRM, автоматизация, интеграции. Честные сроки и цены.">
+  <meta name="twitter:image" content="https://konstantin-melnikov.ru/img/author.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Константин Мельников",
+    "url": "https://konstantin-melnikov.ru",
+    "image": "https://konstantin-melnikov.ru/img/author.jpg",
+    "description": "Специалист по внедрению и настройке Битрикс24: CRM, автоматизация, интеграции с 1С и телефонией.",
+    "telephone": "+7-999-100-65-82",
+    "sameAs": ["https://t.me/Melnikoffk"],
+    "knowsAbout": ["Битрикс24", "CRM", "1С интеграция", "автоматизация бизнес-процессов"]
+  }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #212a4a;
+      --navy-light: #2d3655;
+      --accent: #4a6fa5;
+      --accent-hover: #3d5a8a;
+      --accent-soft: rgba(74, 111, 165, 0.14);
+      --text: #1a1d28;
+      --text-muted: #5a6178;
+      --border: rgba(33, 42, 74, 0.12);
+      --shadow: 0 4px 20px rgba(33, 42, 74, 0.08);
+      --radius: 10px;
+    }
+    body {
+      font-family: 'Manrope', sans-serif;
+      color: var(--text);
+      background: #eef1f6;
+      background-image: radial-gradient(ellipse 120% 80% at 80% 20%, rgba(33, 42, 74, 0.04) 0%, transparent 50%),
+                      radial-gradient(ellipse 100% 60% at 10% 90%, rgba(74, 111, 165, 0.06) 0%, transparent 45%);
+    }
+    .navbar { background: #fff !important; box-shadow: 0 1px 0 var(--border); }
+    .nav-link { color: var(--text) !important; font-weight: 500; }
+    .nav-link:hover { color: var(--accent) !important; }
+    .navbar-brand { color: var(--text) !important; font-weight: 700; }
+    @media (max-width: 991.98px) {
+      .navbar-collapse { background: #f0f2f6; margin: 0.75rem -0.5rem -0.75rem; padding: 1rem 0.5rem 1.25rem; border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+      .navbar-nav { margin-left: 0 !important; align-items: center; text-align: center; gap: 0 !important; }
+      .navbar-nav .nav-link { padding: 0.65rem 1.25rem; display: block; border-radius: var(--radius); font-weight: 600; }
+      .navbar-nav .nav-link:hover { color: var(--accent) !important; background: rgba(255,255,255,0.8); }
+    }
+    .btn-primary { background: var(--accent); border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .text-accent { color: var(--accent); }
+    .bg-hero {
+      background: linear-gradient(165deg, #fff 0%, #f8fafd 40%, #f0f4fa 100%);
+      background-image: radial-gradient(ellipse 80% 50% at 70% 30%, rgba(74, 111, 165, 0.06) 0%, transparent 55%),
+                        linear-gradient(165deg, #fff 0%, #f8fafd 45%, #f0f4fa 100%);
+    }
+    .quote-block { border-left: 2px solid var(--accent); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+    .card { border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(33, 42, 74, 0.12); }
+    .service-icon { width: 48px; height: 48px; border-radius: var(--radius); background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 700; }
+    .hero-photo { width: 100%; max-width: 320px; border-radius: var(--radius); object-fit: cover; aspect-ratio: 1; box-shadow: 0 12px 40px rgba(33, 42, 74, 0.15); }
+    .hero-video { display: block; pointer-events: none; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
+    .calc-result { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    .calc-item { background: #fff; border: 1px solid rgba(33, 42, 74, 0.2) !important; box-shadow: 0 1px 3px rgba(33, 42, 74, 0.06); }
+    .calc-item:hover { border-color: var(--accent) !important; box-shadow: 0 2px 8px rgba(33, 42, 74, 0.1); }
+    details { border: 1px solid var(--border) !important; border-radius: var(--radius) !important; }
+    details summary { cursor: pointer; list-style: none; padding-right: 2rem; position: relative; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--accent); transition: transform .2s; }
+    details[open] summary::after { transform: translateY(-50%) rotate(180deg); }
+    details:hover { border-color: var(--accent) !important; }
+    #alert { transition: opacity .3s; }
+    .section-title { color: var(--text); }
+    .section-subtitle { color: var(--text-muted); }
+    .bg-order { background: var(--navy); color: #e8eaef; position: relative; overflow: hidden; }
+    .bg-order::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03) 0%, transparent 40%); pointer-events: none; }
+    .bg-order .section-title { color: #fff; }
+    .bg-order .section-subtitle { color: rgba(232, 234, 239, 0.85); }
+    .bg-order .btn-primary { background: var(--accent); border-color: var(--accent); }
+    .bg-order .btn-primary:hover { background: #5a7fb5; border-color: #5a7fb5; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">Константин Мельников</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto gap-4">
+          <li><a class="nav-link" href="#how">Как работаем</a></li>
+          <li><a class="nav-link" href="#uslugi">Услуги</a></li>
+          <li><a class="nav-link" href="#calculator">Стоимость</a></li>
+          <li><a class="nav-link" href="#expert">Об эксперте</a></li>
+          <li><a class="nav-link" href="#faq">Вопросы</a></li>
+          <li><a class="nav-link" href="#order">Заявка</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-hero py-5 py-lg-6 border-bottom">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="text-accent text-uppercase fw-600 small mb-2">Битрикс24 под ключ</p>
+          <h1 class="display-5 fw-bold mb-3">Настрою Битрикс24 так, чтобы ты экономил время и рос в продажах</h1>
+          <p class="lead text-body-secondary mb-4">CRM, автоматизация, интеграции. Без воды: делаю то, что реально нужно твоему бизнесу.</p>
+          <a class="btn btn-primary btn-lg rounded-3 px-4" href="#order">Обсудить задачу</a>
+        </div>
+        <div class="col-lg-5 text-center text-lg-end">
+          <video class="hero-photo hero-video ms-lg-auto" autoplay muted loop playsinline poster="img/author.jpg" aria-label="Константин Мельников">
+            <source src="img/video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-5 py-lg-6" id="how">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-2">Как мы работаем</h2>
+      <p class="section-subtitle text-center mb-5">От заявки до результата, без сюрпризов</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <span class="step-num mb-3">1</span>
+            <h3 class="h6 fw-bold mb-2">Пишешь или звонишь</h3>
+            <p class="text-muted small mb-0">Рассказываешь, что нужно. Я уточняю детали и говорю, что могу сделать и за какой срок.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <span class="step-num mb-3">2</span>
+            <h3 class="h6 fw-bold mb-2">Оценка и план</h3>
+            <p class="text-muted small mb-0">Честно говорю сроки и сумму. Никаких скрытых доплат: если что-то меняется, обсудим.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <span class="step-num mb-3">3</span>
+            <h3 class="h6 fw-bold mb-2">Делаю</h3>
+            <p class="text-muted small mb-0">Работаю по договорённостям. Могу показывать промежуточные результаты, если важно.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <span class="step-num mb-3">4</span>
+            <h3 class="h6 fw-bold mb-2">Сдаю и остаюсь на связи</h3>
+            <p class="text-muted small mb-0">Передаю систему, при необходимости обучаю. Вопросы после сдачи не игнорирую.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 py-lg-6 bg-white" id="uslugi">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-2">В каких случаях ко мне обращаются</h2>
+      <p class="section-subtitle text-center mb-5">Ниже можно собрать свой набор задач и увидеть ориентир по стоимости</p>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3 border shadow-sm text-center">
+            <p class="mb-0 small text-muted">Запускаете Битрикс24 с нуля или хотите навести порядок в том, что уже есть</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3 border shadow-sm text-center">
+            <p class="mb-0 small text-muted">Нужно автоматизировать рутину: сделки, задачи, уведомления</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3 border shadow-sm text-center">
+            <p class="mb-0 small text-muted">Хотите связать Битрикс24 с 1С, телефонией, сайтом или рассылками</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-3 border shadow-sm text-center">
+            <p class="mb-0 small text-muted">Нужны точечные доработки, отчёты под себя или обучение команды</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-3 py-lg-4" id="calculator" style="background: #f0f2f6;">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-3">
+        <h2 class="section-title fw-bold mb-0">Калькулятор стоимости</h2>
+        <p class="section-subtitle small mb-0" style="color: var(--text-muted);">Отметь задачи, итог внизу. Скидка 30% для первых клиентов.</p>
+      </div>
+      <div class="row g-2 mb-3">
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="14000">
+            <span class="flex-grow-1">Учёт клиентов</span>
+            <span class="text-accent fw-600">14 000 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="21000">
+            <span class="flex-grow-1">Автоматизация продаж</span>
+            <span class="text-accent fw-600">21 000 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
+            <span class="flex-grow-1">Заявки с сайта в CRM</span>
+            <span class="text-accent fw-600">8 400 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
+            <span class="flex-grow-1">Телефония</span>
+            <span class="text-accent fw-600">10 500 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
+            <span class="flex-grow-1">WhatsApp в CRM</span>
+            <span class="text-accent fw-600">8 400 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
+            <span class="flex-grow-1">Email-рассылки</span>
+            <span class="text-accent fw-600">7 000 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="14000">
+            <span class="flex-grow-1">Статистика продаж</span>
+            <span class="text-accent fw-600">14 000 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="17500">
+            <span class="flex-grow-1">Синхронизация с 1С</span>
+            <span class="text-accent fw-600">17 500 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
+            <span class="flex-grow-1">Повторные продажи</span>
+            <span class="text-accent fw-600">10 500 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
+            <span class="flex-grow-1">Задачи сотрудников</span>
+            <span class="text-accent fw-600">8 400 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
+            <span class="flex-grow-1">Документы в облаке</span>
+            <span class="text-accent fw-600">7 000 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
+            <span class="flex-grow-1">Коммерческие предложения</span>
+            <span class="text-accent fw-600">10 500 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="8400">
+            <span class="flex-grow-1">База знаний</span>
+            <span class="text-accent fw-600">8 400 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="10500">
+            <span class="flex-grow-1">Онлайн-платежи</span>
+            <span class="text-accent fw-600">10 500 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
+            <span class="flex-grow-1">Права доступа</span>
+            <span class="text-accent fw-600">7 000 ₽</span>
+          </label>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label class="d-flex align-items-center gap-2 p-2 border rounded-3 cursor-pointer calc-item small">
+            <input type="checkbox" class="form-check-input flex-shrink-0" data-price="7000">
+            <span class="flex-grow-1">Обучение команды</span>
+            <span class="text-accent fw-600">7 000 ₽</span>
+          </label>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-4 bg-white rounded-3" style="border: 1px solid rgba(33, 42, 74, 0.15); box-shadow: var(--shadow);">
+        <div>
+          <span class="text-muted small">Итого</span>
+          <p class="calc-result mb-0 fs-4" id="calc-total">0 ₽</p>
+        </div>
+        <a href="#order" class="btn btn-primary rounded-3 px-4">Заказать</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 py-lg-6 bg-white" id="expert">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <h2 class="section-title text-center fw-bold mb-3">Обо мне</h2>
+          <p class="text-center mb-0">Константин Мельников. Настраиваю Битрикс24 так, чтобы система реально помогала бизнесу, а не была «ещё одной обязательной программой». Доверие клиента для меня важнее разового контракта: обещал - сделаю; если не уверен, что справлюсь - скажу честно и подскажу, куда лучше обратиться. Клиенты в приоритете, честные сроки и оценки - норма.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 py-lg-6" id="trust">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-2">Почему мне доверяют</h2>
+      <p class="section-subtitle text-center mb-5">Как я работаю</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <div class="mb-2">&#10004;</div>
+            <h3 class="h6 fw-bold mb-2">Честные сроки и смета</h3>
+            <p class="text-muted small mb-0">Говорю реальные сроки, не раздуваю объём. Доплаты только если ты сам меняешь задачу.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <div class="mb-2">&#10004;</div>
+            <h3 class="h6 fw-bold mb-2">Без лишнего</h3>
+            <p class="text-muted small mb-0">Не навязываю то, что не нужно. Делаю то, что решит твою задачу.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <div class="mb-2">&#10004;</div>
+            <h3 class="h6 fw-bold mb-2">Один контакт</h3>
+            <p class="text-muted small mb-0">Общаешься со мной напрямую. Без менеджеров и перекидывания.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 bg-white shadow-sm text-center">
+            <div class="mb-2">&#10004;</div>
+            <h3 class="h6 fw-bold mb-2">Поддержка после сдачи</h3>
+            <p class="text-muted small mb-0">Остаюсь на связи. Вопросы и точечные правки - не пропадаю после сдачи.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 py-lg-6 bg-white" id="faq">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-2">Частые вопросы</h2>
+      <p class="section-subtitle text-center mb-5">Нажми на вопрос, чтобы раскрыть ответ</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="d-flex flex-column gap-3">
+            <details class="border rounded-3 p-4">
+              <summary class="fw-600">Сколько времени занимает настройка?</summary>
+              <p class="text-muted mt-3 mb-0">Базовая CRM - 3-5 дней. Полноценное внедрение с интеграциями - 2-3 недели. Зависит от объёма задач, обсудим по факту.</p>
+            </details>
+            <details class="border rounded-3 p-4">
+              <summary class="fw-600">Нужно ли покупать Битрикс24?</summary>
+              <p class="text-muted mt-3 mb-0">Есть бесплатный тариф на 5 пользователей. Для большинства хватает платного от 1990 ₽/мес. Помогу подобрать под тебя.</p>
+            </details>
+            <details class="border rounded-3 p-4">
+              <summary class="fw-600">Что если что-то сломается?</summary>
+              <p class="text-muted mt-3 mb-0">Первый месяц после внедрения помогаю бесплатно. Дальше можем договориться о поддержке или решать вопросы по мере появления.</p>
+            </details>
+            <details class="border rounded-3 p-4">
+              <summary class="fw-600">Можно ли начать с малого?</summary>
+              <p class="text-muted mt-3 mb-0">Да. Обычно начинаем с базовой CRM, смотрим как работает, потом добавляем то, что нужно.</p>
+            </details>
+            <details class="border rounded-3 p-4">
+              <summary class="fw-600">Работаешь удалённо?</summary>
+              <p class="text-muted mt-3 mb-0">Да, почти всё делаю удалённо. Встречи по необходимости - онлайн или лично.</p>
+            </details>
+            <details class="border rounded-3 p-4">
+              <summary class="fw-600">С чего начать, если Битрикс24 только поставил?</summary>
+              <p class="text-muted mt-3 mb-0">Лучше всего с CRM под твою воронку: этапы сделок, поля, права. Потом роботы и интеграции. Могу сделать аудит и набросать план под твой бизнес.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 py-lg-6 bg-order" id="order">
+    <div class="container position-relative">
+      <h2 class="section-title text-center fw-bold mb-2">Оставить заявку</h2>
+      <p class="section-subtitle text-center mb-5">Опиши задачу или выбери направление. Свяжусь, обсудим без обязательств.</p>
+      <div id="alert" class="alert d-none mb-4" role="alert"></div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form method="post" action="telegram.php" class="card p-4 p-lg-5 border-0" style="background: rgba(255,255,255,0.97); box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Имя</label>
+                <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Как тебя зовут" required>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Телефон</label>
+                <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Чтобы перезвонить" required>
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="example@mail.ru" required>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea class="form-control form-control-lg" id="message" name="message" rows="4" placeholder="Кратко опиши задачу или вопрос" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg rounded-3 px-4">Отправить заявку</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-top py-4">
+    <div class="container text-center text-muted small">
+      <p class="mb-2">Константин Мельников. Битрикс24: внедрение, настройка, автоматизация.</p>
+      <p class="mb-2">
+        <a href="https://wa.me/79991006582" class="text-decoration-none text-dark" target="_blank" rel="noopener">+7 999 100-65-82</a>
+        <span class="mx-2">·</span>
+        <a href="https://t.me/Melnikoffk" class="text-decoration-none text-dark" target="_blank" rel="noopener">Telegram @Melnikoffk</a>
+      </p>
+      <p class="mb-0">ИНН 110804843137</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var alertEl = document.getElementById('alert');
+      if (p.get('sent') === '1') { alertEl.classList.add('alert-success'); alertEl.textContent = 'Заявка отправлена. Свяжусь с тобой в ближайшее время.'; alertEl.classList.remove('d-none'); window.history.replaceState({}, '', window.location.pathname); }
+      if (p.get('error') === '1') { alertEl.classList.add('alert-warning'); alertEl.textContent = 'Заполни все поля.'; alertEl.classList.remove('d-none'); }
+      if (p.get('error') === '2') { alertEl.classList.add('alert-danger'); alertEl.textContent = 'Не настроена отправка (токен или чат на сервере). Напиши в мессенджер.'; alertEl.classList.remove('d-none'); }
+      if (p.get('error') === '3') { alertEl.classList.add('alert-danger'); alertEl.textContent = 'Telegram не принял сообщение. Проверь токен, Chat ID и что бот добавлен в чат, или напиши в мессенджер.'; alertEl.classList.remove('d-none'); }
+    })();
+    (function () {
+      var checkboxes = document.querySelectorAll('.calc-item input[data-price]');
+      var totalEl = document.getElementById('calc-total');
+      function update() {
+        var total = 0;
+        checkboxes.forEach(function(cb) {
+          if (cb.checked) total += parseInt(cb.dataset.price, 10);
+        });
+        totalEl.textContent = total.toLocaleString('ru-RU') + ' ₽';
+      }
+      checkboxes.forEach(function(cb) { cb.addEventListener('change', update); });
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
