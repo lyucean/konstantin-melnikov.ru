@@ -1,0 +1,104 @@
+/* konstantin-melnikov.ru */
+:root {
+  --navy: #212a4a;
+  --navy-light: #2d3655;
+  --accent: #4a6fa5;
+  --accent-hover: #3d5a8a;
+  --accent-soft: rgba(74, 111, 165, 0.14);
+  --text: #1a1d28;
+  --text-muted: #5a6178;
+  --border: rgba(33, 42, 74, 0.12);
+  --shadow: 0 4px 20px rgba(33, 42, 74, 0.08);
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text);
+  background: #eef1f6;
+  background-image: radial-gradient(ellipse 120% 80% at 80% 20%, rgba(33, 42, 74, 0.04) 0%, transparent 50%),
+                    radial-gradient(ellipse 100% 60% at 10% 90%, rgba(74, 111, 165, 0.06) 0%, transparent 45%);
+}
+
+.navbar { background: #fff !important; box-shadow: 0 1px 0 var(--border); }
+.nav-link { color: var(--text) !important; font-weight: 500; }
+.nav-link:hover { color: var(--accent) !important; }
+.navbar-brand { color: var(--text) !important; font-weight: 700; }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse { background: #f0f2f6; margin: 0.75rem -0.5rem -0.75rem; padding: 1rem 0.5rem 1.25rem; border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .navbar-nav { margin-left: 0 !important; align-items: center; text-align: center; gap: 0 !important; }
+  .navbar-nav .nav-link { padding: 0.65rem 1.25rem; display: block; border-radius: var(--radius); font-weight: 600; }
+  .navbar-nav .nav-link:hover { color: var(--accent) !important; background: rgba(255,255,255,0.8); }
+}
+
+.nav-contacts { margin-left: 0; }
+.nav-contacts .nav-link { text-decoration: none !important; }
+@media (min-width: 992px) {
+  .nav-contacts { margin-left: 0.5rem; padding-left: 1rem; border-left: 1px solid var(--border); }
+}
+
+.btn-primary { background: var(--accent); border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.text-accent { color: var(--accent); }
+
+.bg-hero {
+  background: linear-gradient(165deg, #fff 0%, #f8fafd 40%, #f0f4fa 100%);
+  background-image: radial-gradient(ellipse 80% 50% at 70% 30%, rgba(74, 111, 165, 0.06) 0%, transparent 55%),
+                    linear-gradient(165deg, #fff 0%, #f8fafd 45%, #f0f4fa 100%);
+}
+
+.quote-block { border-left: 2px solid var(--accent); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+.card { border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(33, 42, 74, 0.12); }
+
+.form-order-card {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon { width: 48px; height: 48px; border-radius: var(--radius); background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 700; }
+.hero-photo { width: 100%; max-width: 320px; border-radius: var(--radius); object-fit: cover; aspect-ratio: 1; box-shadow: 0 12px 40px rgba(33, 42, 74, 0.15); }
+.hero-video { display: block; pointer-events: none; }
+@media (max-width: 991.98px) {
+  .hero-video { margin-left: auto; margin-right: auto; }
+}
+
+.step-label { color: var(--accent); font-weight: 700; margin-right: 0.25rem; }
+.check-icon { color: #4aa560; margin-right: 0.25rem; }
+.step-arrow { color: var(--accent); opacity: 0.6; }
+.step-arrow svg { width: 24px; height: 24px; flex-shrink: 0; }
+.calc-result { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.calc-item { background: #fff; border: 1px solid rgba(33, 42, 74, 0.2) !important; box-shadow: 0 1px 3px rgba(33, 42, 74, 0.06); }
+.calc-item:hover { border-color: var(--accent) !important; box-shadow: 0 2px 8px rgba(33, 42, 74, 0.1); }
+.calc-item-hint { cursor: help; flex-shrink: 0; opacity: 0.7; }
+.calc-item-hint:hover { opacity: 1; }
+
+details { border: 1px solid var(--border) !important; border-radius: var(--radius) !important; }
+details summary { cursor: pointer; list-style: none; padding-right: 2rem; position: relative; }
+details summary::-webkit-details-marker { display: none; }
+details summary::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--accent); transition: transform .2s; }
+details[open] summary::after { transform: translateY(-50%) rotate(180deg); }
+details:hover { border-color: var(--accent) !important; }
+
+#alert { transition: opacity .3s; }
+.order-alert { border: none; border-radius: var(--radius); }
+.order-alert.alert-success { background: rgba(45, 90, 74, 0.85); color: #c5e6d4; }
+.order-alert.alert-warning { background: rgba(90, 65, 45, 0.85); color: #e6ddc5; }
+.order-alert.alert-danger { background: rgba(90, 45, 45, 0.85); color: #e6c5c5; }
+.section-title { color: var(--text); }
+.section-subtitle { color: var(--text-muted); }
+
+.bg-order { background: var(--navy); color: #e8eaef; position: relative; overflow: hidden; }
+.bg-order::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03) 0%, transparent 40%); pointer-events: none; }
+.bg-order .section-title { color: #fff; }
+.bg-order .section-subtitle { color: rgba(232, 234, 239, 0.85); }
+.bg-order .btn-primary { background: var(--accent); border-color: var(--accent); }
+.bg-order .btn-primary:hover { background: #5a7fb5; border-color: #5a7fb5; }
+
+.order-contact-number { font-size: 1.75rem; font-weight: 700; letter-spacing: 0.02em; }
+.order-contact-number a { color: #fff !important; text-decoration: none !important; }
+.order-contact-number a:hover { color: rgba(255,255,255,0.9) !important; text-decoration: underline !important; }
+.order-contact-icons a { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background: rgba(255,255,255,0.15); color: #fff; transition: background .2s, color .2s; }
+.order-contact-icons a:hover { background: rgba(255,255,255,0.25); color: #fff; }
+.order-contact-icons a i { font-size: 1.5rem; }

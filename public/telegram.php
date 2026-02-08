@@ -1,5 +1,14 @@
 <?php
+$isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
+
+function jsonResponse($ok, $error = null) {
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['ok' => $ok, 'error' => $error]);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    if ($isAjax) jsonResponse(false, 0);
     header('Location: index.html');
     exit;
 }
@@ -11,6 +20,7 @@ $usluga = trim($_POST['usluga'] ?? '');
 $message = trim($_POST['message'] ?? '');
 
 if (!$name || !$phone || !$email || !$message) {
+    if ($isAjax) jsonResponse(false, 1);
     header('Location: index.html?error=1');
     exit;
 }
@@ -33,6 +43,7 @@ if ((!$token || !$chatId) && is_readable('/var/run/app.env')) {
 }
 
 if (!$token || !$chatId) {
+    if ($isAjax) jsonResponse(false, 2);
     header('Location: index.html?error=2');
     exit;
 }
@@ -75,8 +86,10 @@ if (empty($json['ok'])) {
     } elseif (!$result) {
         error_log('[telegram.php] Telegram API: no response (check SSL/network)');
     }
+    if ($isAjax) jsonResponse(false, 3);
     header('Location: index.html?error=3');
     exit;
 }
 
+if ($isAjax) jsonResponse(true);
 header('Location: index.html?sent=1');
