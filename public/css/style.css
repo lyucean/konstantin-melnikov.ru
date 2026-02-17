@@ -102,3 +102,14 @@ details:hover { border-color: var(--accent) !important; }
 .order-contact-icons a { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background: rgba(255,255,255,0.15); color: #fff; transition: background .2s, color .2s; }
 .order-contact-icons a:hover { background: rgba(255,255,255,0.25); color: #fff; }
 .order-contact-icons a i { font-size: 1.5rem; }
+
+.napravlenie-card { color: var(--text); }
+.napravlenie-card:hover { color: var(--text); }
+.napravlenie-card .text-accent { color: var(--accent); }
+.napravlenie-card:hover .text-accent { color: var(--accent-hover); }
+
+/* Блок контактов на светлом фоне (страницы статей) */
+.contacts-block-light .order-contact-number a { color: var(--accent) !important; text-decoration: none !important; }
+.contacts-block-light .order-contact-number a:hover { color: var(--accent-hover) !important; text-decoration: underline !important; }
+.contacts-block-light .order-contact-icons a { background: var(--accent-soft); color: var(--accent); }
+.contacts-block-light .order-contact-icons a:hover { background: rgba(74, 111, 165, 0.25); color: var(--accent-hover); }
