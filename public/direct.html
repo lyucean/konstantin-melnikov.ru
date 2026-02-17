@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Баннеры для рекламы - Битрикс24 Киров</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #212a4a;
+      --navy-light: #2d3655;
+      --accent: #4a6fa5;
+      --white: #fff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #e8eaef;
+      padding: 2rem;
+      color: #1a1d28;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    .banner-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .banner-wrap {
+      flex-shrink: 0;
+    }
+    .banner-wrap p {
+      font-size: 0.75rem;
+      color: #5a6178;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .banner {
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .banner a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .banner .city { color: #7aa3e0; font-weight: 800; }
+    .banner .cta { font-weight: 600; margin-top: 0.35em; font-size: 0.5em; opacity: 0.95; }
+
+    /* 240x400 */
+    .banner-240x400 { width: 240px; height: 400px; }
+    .banner-240x400 .line1 { font-size: 22px; }
+    .banner-240x400 .line2 { font-size: 28px; margin-top: 8px; }
+    .banner-240x400 .line3 { font-size: 18px; margin-top: 12px; }
+    .banner-240x400 .cta { font-size: 14px; margin-top: 16px; }
+
+    /* 300x250 */
+    .banner-300x250 { width: 300px; height: 250px; }
+    .banner-300x250 .line1 { font-size: 26px; }
+    .banner-300x250 .line2 { font-size: 32px; margin-top: 6px; }
+    .banner-300x250 .line3 { font-size: 16px; margin-top: 10px; }
+    .banner-300x250 .cta { font-size: 14px; margin-top: 12px; }
+
+    /* 728x90 */
+    .banner-728x90 { width: 728px; height: 90px; flex-direction: row; gap: 16px; }
+    .banner-728x90 .line1 { font-size: 28px; }
+    .banner-728x90 .line2 { font-size: 20px; margin-top: 2px; }
+    .banner-728x90 .cta { font-size: 14px; margin-top: 4px; margin-left: 0; }
+
+    /* 970x250 */
+    .banner-970x250 { width: 970px; height: 250px; }
+    .banner-970x250 .line1 { font-size: 42px; }
+    .banner-970x250 .line2 { font-size: 28px; margin-top: 8px; }
+    .banner-970x250 .line3 { font-size: 20px; margin-top: 12px; }
+    .banner-970x250 .cta { font-size: 18px; margin-top: 16px; }
+
+    /* 1000x120 (Яндекс.Директ) */
+    .banner-1000x120 { width: 1000px; height: 120px; flex-direction: row; gap: 24px; }
+    .banner-1000x120 .line1 { font-size: 36px; }
+    .banner-1000x120 .line2 { font-size: 22px; margin-top: 4px; }
+    .banner-1000x120 .cta { font-size: 16px; margin-top: 6px; margin-left: 0; }
+  </style>
+</head>
+<body>
+  <h1>Баннеры для рекламной сети (Киров, Битрикс24)</h1>
+  <p style="color: #5a6178; margin-bottom: 1.5rem;">Стандартные размеры, крупный текст, привязка к гео. Для скриншота или экспорта в картинку.</p>
+
+  <div class="banner-grid">
+    <!-- 240x400 -->
+    <div class="banner-wrap">
+      <p>240×400 (вертикальный)</p>
+      <div class="banner banner-240x400">
+        <span class="line1">Битрикс24</span>
+        <span class="line2 city">Киров</span>
+        <span class="line3">CRM и автоматизация под ключ</span>
+        <span class="cta">Честные сроки и цены →</span>
+      </div>
+    </div>
+
+    <div class="banner-wrap">
+      <p>240×400 (вариант 2)</p>
+      <div class="banner banner-240x400">
+        <span class="line1">Перестаньте терять сделки</span>
+        <span class="line2 city">Киров</span>
+        <span class="line3">Настроим учёт и продажи</span>
+        <span class="cta">konstantin-melnikov.ru</span>
+      </div>
+    </div>
+
+    <!-- 300x250 -->
+    <div class="banner-wrap">
+      <p>300×250 (средний прямоугольник)</p>
+      <div class="banner banner-300x250">
+        <span class="line1">Внедрение Битрикс24</span>
+        <span class="line2 city">в Кирове</span>
+        <span class="line3">CRM, заявки с сайта, интеграции</span>
+        <span class="cta">Обсудить задачу →</span>
+      </div>
+    </div>
+
+    <div class="banner-wrap">
+      <p>300×250 (вариант 2)</p>
+      <div class="banner banner-300x250">
+        <span class="line1">Учёт клиентов в одном месте</span>
+        <span class="line2 city">Киров</span>
+        <span class="line3">Без воды. Под ваш бизнес.</span>
+        <span class="cta">Скидка 20% на первый проект</span>
+      </div>
+    </div>
+
+    <!-- 728x90 -->
+    <div class="banner-wrap">
+      <p>728×90 (верхний баннер)</p>
+      <div class="banner banner-728x90">
+        <span class="line1">Битрикс24 в Кирове</span>
+        <span class="line2">Внедрение и настройка под ключ. CRM, автоматизация.</span>
+        <span class="cta">konstantin-melnikov.ru</span>
+      </div>
+    </div>
+
+    <!-- 970x250 -->
+    <div class="banner-wrap">
+      <p>970×250 (Billboard)</p>
+      <div class="banner banner-970x250">
+        <span class="line1">Настрою Битрикс24 так, чтобы вы росли в продажах</span>
+        <span class="line2 city">Киров</span>
+        <span class="line3">CRM, заявки с сайта, 1С, телефония. Честные сроки.</span>
+        <span class="cta">Обсудить задачу → konstantin-melnikov.ru</span>
+      </div>
+    </div>
+
+    <!-- 1000x120 -->
+    <div class="banner-wrap">
+      <p>1000×120 (широкий, Директ)</p>
+      <div class="banner banner-1000x120">
+        <span class="line1">Битрикс24 для бизнеса в Кирове</span>
+        <span class="line2">Внедрение, настройка, интеграции. Без скрытых доплат.</span>
+        <span class="cta">Скидка 20% — набираю базу на поддержку →</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
